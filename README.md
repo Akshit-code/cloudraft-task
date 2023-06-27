@@ -135,6 +135,9 @@ sudo snap install terraform --classic
    terraform init
    ```
    ```
+   terraform plan
+   ```
+   ```
    terraform apply
    ```
    Note: This step may take up to 30 minutes to complete the deployment.
