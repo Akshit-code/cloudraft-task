@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Key-Value Store API</title>
+</head>
+<body>
+    <h1>Key-Value Store API</h1>
+    
+    <h2>Set Key-Value Pair</h2>
+    <form id="setForm">
+        Key: <input type="text" id="setKey" required><br>
+        Value: <input type="text" id="setValue" required><br>
+        <button type="submit">Set</button>
+    </form>
+    
+    <h2>Get Value</h2>
+    <form id="getForm">
+        Key: <input type="text" id="getKey" required><br>
+        <button type="submit">Get</button>
+    </form>
+    
+    <h2>Search Keys</h2>
+    <form id="searchForm">
+        Prefix: <input type="text" id="searchPrefix"><br>
+        Suffix: <input type="text" id="searchSuffix"><br>
+        <button type="submit">Search</button>
+    </form>
+    
+    <h2>Response</h2>
+    <div id="response"></div>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

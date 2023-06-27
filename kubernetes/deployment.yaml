@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: key-value-store-api
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: key-value-store-api
+  template:
+    metadata:
+      labels:
+        app: key-value-store-api
+    spec:
+      containers:
+      - name: key-value-store-api
+        image: public.ecr.aws/r4o7l7m3/cloudraft_task_repo:latest
+        ports: 
+        - containerPort: 8080
