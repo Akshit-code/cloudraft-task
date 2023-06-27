@@ -38,10 +38,10 @@ sudo snap install terraform --classic
 
 1. Clone the repository
    ```
-   git clone <repository_url>
+   git clone "https://github.com/Akshit-code/cloudraft-task.git"
    ```
    ```
-   cd cloudraft-app/
+   cd cloudraft-task/
    ```
 2. Build the application using maven
    ```
@@ -117,6 +117,18 @@ sudo snap install terraform --classic
    Now, to deploy using Terraform, you will need an SSH key. Generate a private SSH key using the same AWS account and store it in the terraform directory. Make a note of the SSH key name, as it will need to be replaced in the main.tf file.
    ```
    cd terraform
+   ```
+   Edit terraform with your editor and replce below code with your config path and SSH key pair. Below ihere is given example
+   ```
+   provider "kubernetes" {
+      config_path = "/home/akshit/.kube/config"
+   }
+   ```
+   ```
+   remote_access {
+      ec2_ssh_key     = "cloudraft_task_keypair"  # Specify the name of your SSH key pair
+      source_security_group_ids = [aws_security_group.task_eks_sg.id]
+   }
    ```
    To provision the required infrastructure on AWS using Terraform, use the provided Terraform configuration files:
    ```
